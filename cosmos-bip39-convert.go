@@ -9,7 +9,7 @@ import (
 
 	bip39 "github.com/cosmos/go-bip39"
 
-	"github.com/tendermint/tendermint/crypto/secp256k1"
+	//"github.com/tendermint/tendermint/crypto/secp256k1"
 )
 
 func main() {
@@ -51,8 +51,9 @@ func main() {
 			return
 		}
 		fmt.Println("Privatekey:", fmt.Sprintf("%x", derivedPriv))
-		fmt.Println("Publickey :", secp256k1.PrivKeySecp256k1(derivedPriv).PubKey())
+		//fmt.Println("Publickey :", secp256k1.PrivKeySecp256k1(derivedPriv).PubKey())
 	} else {
 		flag.Usage()
+		//flag.PrintDefaults()
 	}
 }
