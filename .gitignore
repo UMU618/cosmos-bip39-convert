@@ -10,3 +10,10 @@
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
+
+
+# macOS
+.DS_Store
+
+# binary
+cosmos-bip39-convert
