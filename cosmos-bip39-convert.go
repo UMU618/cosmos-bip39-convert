@@ -1,14 +1,14 @@
-package main	// import "github.com/UMU618/cosmos-bip39-convert"
+package main // import "github.com/UMU618/cosmos-bip39-convert"
 
 import (
 	"encoding/hex"
 	"flag"
 	"fmt"
 
-	"github.com/cosmos/cosmos-sdk/crypto/keys/hd"
+	"github.com/cosmos/cosmos-sdk/crypto/hd"
 
+	sdk "github.com/cosmos/cosmos-sdk/types"
 	bip39 "github.com/cosmos/go-bip39"
-
 	//"github.com/tendermint/tendermint/crypto/secp256k1"
 )
 
@@ -45,7 +45,7 @@ func main() {
 		fmt.Println("Seed      :", fmt.Sprintf("%x", seed))
 
 		masterPriv, ch := hd.ComputeMastersFromSeed(seed)
-		derivedPriv, err := hd.DerivePrivateKeyForPath(masterPriv, ch, hd.FullFundraiserPath)
+		derivedPriv, err := hd.DerivePrivateKeyForPath(masterPriv, ch, sdk.FullFundraiserPath)
 		if err != nil {
 			fmt.Println(err)
 			return
